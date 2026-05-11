@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>교보생명 보이는 ARS</title>
-    <link rel="stylesheet" href="./kyobo-visible-ars.css" />
+    <link rel="stylesheet" href="./css/kyobo-visible-ars.css" />
   </head>
   <body>
     <main class="preview">
@@ -29,7 +29,11 @@
           </header>
 
           <section id="contents">
-            <div class="s-msg">원하시는 메뉴를 선택해 주세요.</div>
+            <div class="s-msg s-msg--normal">원하시는 메뉴를 선택해 주세요.</div>
+            <div class="s-msg s-msg--quick" aria-hidden="true">
+              고객들이 자주 찾는 메뉴 10개를 보여드려요<br />
+              원하시는 메뉴가 없다면, 전체 메뉴보기를 눌러보세요
+            </div>
             <div class="main-list-wrap">
               <div class="main-list" aria-label="일반홈 보이는 ARS 메뉴">
                 <button class="btn" type="button">
@@ -131,7 +135,7 @@
               <button class="btn btn-ars" type="button">
                 <img
                   class="icon-leaf"
-                  src="./assets/kyobo-leaf-30.png"
+                  src="./images/icon_ui_simbol.png"
                   width="30"
                   height="30"
                   alt=""
@@ -178,6 +182,14 @@
 
           arsPage.classList.toggle("normal-home", mode === "normal");
           arsPage.classList.toggle("quick-home", mode === "quick");
+
+          const normalMsg = document.querySelector(".s-msg--normal");
+          const quickMsg = document.querySelector(".s-msg--quick");
+          if (normalMsg && quickMsg) {
+            const isQuick = mode === "quick";
+            normalMsg.setAttribute("aria-hidden", String(isQuick));
+            quickMsg.setAttribute("aria-hidden", String(!isQuick));
+          }
 
           modeButtons.forEach((modeButton) => {
             const isActive = modeButton === button;
