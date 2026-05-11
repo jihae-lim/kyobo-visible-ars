@@ -9,30 +9,65 @@
   <body>
     <main class="preview">
       <section class="phone" aria-label="교보생명 보이는 ARS 화면">
-        <section class="ars-page">
-          <header class="ars-header">
-            <div class="brand-header">
-              <img
-                class="kyobo-logo"
-                src="https://resource.kyobo.com/dgt/web/pc/common/img/common/ci_kyobo_header.png"
-                alt="KYOBO 교보생명"
-              />
-              <button class="search-menu" type="button" aria-label="메뉴 검색">
-                <span></span>
-                <span></span>
-              </button>
-            </div>
+        <div id="wrap" class="p-main ars-page normal-home">
+          <div class="home-toggle" aria-label="홈 화면 전환">
+            <button class="home-toggle-option active" type="button" data-home-mode="normal" aria-pressed="true">일반홈</button>
+            <button class="home-toggle-option" type="button" data-home-mode="quick" aria-pressed="false">빠른</button>
+          </div>
 
-            <section class="intro">
-              <h1>
-                가족사랑을 위해 <span>평생 든든 서비스를 실천</span>하는<br />
-                <em>교보생명</em>입니다.
-              </h1>
-              <p>원하시는 메뉴를 선택해 주세요.</p>
-            </section>
+          <header id="header">
+            <div class="logo" role="img" aria-label="KYOBO 교보생명"></div>
+            <button type="button" class="btn-right btn-toggle-menu" aria-label="메뉴">
+              <div class="icon icons-menu" aria-hidden="true"></div>
+            </button>
+            <div class="m-title">
+              가족사랑을 위해
+              <span class="text-blue">평생 든든 서비스를 실천</span>하는
+              <br />
+              <span class="text-green">교보생명</span>입니다.
+            </div>
           </header>
 
-          <nav class="service-list" aria-label="보이는 ARS 메뉴">
+          <section id="contents">
+            <div class="s-msg">원하시는 메뉴를 선택해 주세요.</div>
+            <div class="main-list-wrap">
+              <div class="main-list" aria-label="일반홈 보이는 ARS 메뉴">
+                <button class="btn" type="button">
+                  <div class="icon icons-01" aria-hidden="true"></div>
+                  <div class="text">대출(보험, 신용)</div>
+                </button>
+                <button class="btn" type="button">
+                  <div class="icon icons-02" aria-hidden="true"></div>
+                  <div class="text">보험료납입/<br />자동이체 신청</div>
+                </button>
+                <button class="btn" type="button">
+                  <div class="icon icons-03" aria-hidden="true"></div>
+                  <div class="text">중도·만기<br />·해지보험금</div>
+                </button>
+                <button class="btn" type="button">
+                  <div class="icon icons-04" aria-hidden="true"></div>
+                  <div class="text">보험계약 조회</div>
+                </button>
+                <button class="btn" type="button">
+                  <div class="icon icons-05" aria-hidden="true"></div>
+                  <div class="text">보험계약 변경</div>
+                </button>
+                <button class="btn" type="button">
+                  <div class="icon icons-06" aria-hidden="true"></div>
+                  <div class="text">수술·입원·통원<br />·실손 청구</div>
+                </button>
+                <button class="btn" type="button">
+                  <div class="icon icons-07" aria-hidden="true"></div>
+                  <div class="text">펀드/신탁</div>
+                </button>
+                <button class="btn" type="button">
+                  <div class="icon icons-08" aria-hidden="true"></div>
+                  <div class="text">증명서</div>
+                </button>
+              </div>
+            </div>
+
+            <nav class="service-list" aria-label="빠른 보이는 ARS 메뉴">
             <button class="list-card" type="button">
               <img class="service-icon" src="https://www.kyobo.com/dgt/web/mobile/common/img/main/simple-ic-2@2x.png" alt="" />
               <span class="list-title">보험금 청구</span>
@@ -83,30 +118,75 @@
               <span class="list-title">보험계약대출상환/이자납입</span>
               <span class="chevron" aria-hidden="true"></span>
             </button>
-          </nav>
+            </nav>
+          </section>
 
-          <p class="data-note">3G, LTE, 5G 환경에서 데이터 요금이 발생합니다.</p>
-        </section>
+          <div class="quick-menu-more">
+            <button type="button">전체 메뉴 보기</button>
+          </div>
 
-        <nav class="bottom-actions" aria-label="ARS 선택 메뉴">
-          <button class="bottom-action green" type="button">
-            <span class="mic" aria-hidden="true"></span>
-            <strong>말로하는<br />ARS</strong>
-          </button>
-          <button class="bottom-action green" type="button">
-            <span class="speaker" aria-hidden="true"></span>
-            <strong>누르는<br />ARS</strong>
-          </button>
-          <button class="bottom-action blue" type="button">
-            <span class="headset" aria-hidden="true"></span>
-            <strong>상담사원<br />연결</strong>
-          </button>
-          <button class="bottom-action black" type="button">
-            <span class="hangup" aria-hidden="true"></span>
-            <strong>통화종료</strong>
-          </button>
-        </nav>
+          <section id="main-call-ui" aria-label="통화 선택 메뉴">
+            <p class="f-msg">3G, LTE , 5G 환경에서 데이터 요금이 발생합니다.</p>
+            <div class="call-ui">
+              <button class="btn btn-ars" type="button">
+                <img
+                  class="icon-leaf"
+                  src="./assets/kyobo-leaf-30.png"
+                  width="30"
+                  height="30"
+                  alt=""
+                  decoding="async"
+                />
+                <div class="text">
+                  교보생명
+                  <br />
+                  모바일
+                </div>
+              </button>
+              <button class="btn btn-ars" type="button">
+                <div class="icon icons-key" aria-hidden="true"></div>
+                <div class="text">
+                  누르는
+                  <br />
+                  ARS
+                </div>
+              </button>
+              <button class="btn btn-support" type="button">
+                <div class="icon icons-support" aria-hidden="true"></div>
+                <div class="text">
+                  상담사원
+                  <br />
+                  연결
+                </div>
+              </button>
+              <button class="btn" type="button">
+                <div class="icon icons-end" aria-hidden="true"></div>
+                <div class="text">통화종료</div>
+              </button>
+            </div>
+          </section>
+        </div>
       </section>
     </main>
+    <script>
+      const arsPage = document.querySelector(".ars-page");
+      const modeButtons = document.querySelectorAll("[data-home-mode]");
+
+      modeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const mode = button.dataset.homeMode;
+
+          arsPage.classList.toggle("normal-home", mode === "normal");
+          arsPage.classList.toggle("quick-home", mode === "quick");
+
+          modeButtons.forEach((modeButton) => {
+            const isActive = modeButton === button;
+
+            modeButton.classList.toggle("active", isActive);
+            modeButton.setAttribute("aria-pressed", String(isActive));
+          });
+        });
+      });
+    </script>
   </body>
 </html>
