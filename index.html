@@ -176,12 +176,28 @@
       const arsPage = document.querySelector(".ars-page");
       const modeButtons = document.querySelectorAll("[data-home-mode]");
 
+      function updateHomeToggleLabels(activeMode) {
+        const btnNormal = document.querySelector('[data-home-mode="normal"]');
+        const btnQuick = document.querySelector('[data-home-mode="quick"]');
+        if (!btnNormal || !btnQuick) return;
+
+        if (activeMode === "quick") {
+          btnNormal.textContent = "일반";
+          btnQuick.textContent = "빠른홈";
+        } else {
+          btnNormal.textContent = "일반홈";
+          btnQuick.textContent = "빠른";
+        }
+      }
+
       modeButtons.forEach((button) => {
         button.addEventListener("click", () => {
           const mode = button.dataset.homeMode;
 
           arsPage.classList.toggle("normal-home", mode === "normal");
           arsPage.classList.toggle("quick-home", mode === "quick");
+
+          updateHomeToggleLabels(mode);
 
           const normalMsg = document.querySelector(".s-msg--normal");
           const quickMsg = document.querySelector(".s-msg--quick");
@@ -199,6 +215,8 @@
           });
         });
       });
+
+      updateHomeToggleLabels(arsPage.classList.contains("quick-home") ? "quick" : "normal");
     </script>
   </body>
 </html>

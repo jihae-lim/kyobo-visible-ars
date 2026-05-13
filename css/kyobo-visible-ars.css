@@ -1747,35 +1747,41 @@ button {
 
 .home-toggle {
   position: absolute;
-  left: 20px;
-  top: 20px;
+  left: 16px;
+  top: 16px;
   z-index: 2;
   display: flex;
   align-items: center;
-  width: 116px;
-  height: 30px;
-  padding: 3px;
+  gap: 0;
+  box-sizing: border-box;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  min-width: 0;
+  height: 28px;
+  padding: 2px;
   border-radius: 999px;
   background: #edf3f8;
 }
 
 .home-toggle-option {
   display: flex;
-  flex: 1;
   align-items: center;
   justify-content: center;
-  height: 24px;
+  min-width: 0;
+  height: 22px;
+  padding: 0 8px;
   border-radius: 999px;
   color: #6d7885;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.06em;
+  line-height: 1;
 }
 
 .home-toggle-option.active {
   background: #fff;
   color: #1d5a9f;
-  box-shadow: 0 2px 6px rgba(21, 63, 104, 0.14);
+  box-shadow: 0 1px 4px rgba(21, 63, 104, 0.12);
 }
 
 .brand-header {
@@ -2411,8 +2417,8 @@ button {
 
 .phone #wrap.p-main > .home-toggle {
   position: absolute;
-  left: 20px;
-  top: 20px;
+  left: 16px;
+  top: 16px;
   z-index: 2;
 }
 
