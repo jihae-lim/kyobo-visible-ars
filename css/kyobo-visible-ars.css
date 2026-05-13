@@ -2418,7 +2418,7 @@ button {
 .phone #wrap.p-main > .home-toggle {
   position: absolute;
   left: 16px;
-  top: 16px;
+  top: 22px;
   z-index: 2;
 }
 
